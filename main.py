@@ -1,4 +1,8 @@
 import math
+import re
+import random
+import string
+
 
 def print_hi(name, age):
     username = input("what's your name ?")
@@ -123,8 +127,8 @@ def prime_number():
 # Exercise 16
 def char_in_string():
     s = "PYTHON"
-    for i in range(len(s)):
-        print(s[i])
+    for i in s:
+        print(i)
 
 
 # Exercise 17
@@ -145,6 +149,216 @@ def char_iteration():
     print(iteration)
 
 
+# Exercise 18
+def string_contains_char():
+    char_positions = []
+    s = input("Enter a sentence or a word")
+    for i in range(len(s)):
+        if s[i] == "a":
+            char_positions.append(i + 1)
+    if len(char_positions) > 0:
+        for i in range(len(char_positions)):
+            print("The char 'a' is at the position " + str(char_positions[i]))
+    else:
+        print("There's not 'a' in your sentence")
+
+
+# Exercise 19
+def array_length_and_list_char():
+    array = ["laptop", "iphone", "tablet"]
+    for i in range(len(array)):
+        output = ""
+        for j in range(len(array[i])):
+            output += array[i][j] + " "
+        output += "--> length = " + str(len(array[i]))
+        print(output)
+
+
+# Exercise 20
+def split_first_and_last_char():
+    s = input("Enter a sentence or a word")
+    first_char = s[0]
+    last_char = s[len(s) - 1]
+    s.replace(first_char, last_char)
+    print(s)
+
+
+# Exercise 21
+def vowels_in_string():
+    s = "anticonstitutionellement"
+    vowels = re.findall(r"[aeiouy]", s)
+    print("The string '" + s + "' contains " + str(len(vowels)) + " vowels")
+
+
+# Exercise 22
+def first_word_in_string():
+    s = "Python est un merveilleux langage de programmation"
+    print("The first word of your string is '" + str(s.split(' ')[0]) + "'")
+
+
+# Exercise 23
+def file_extension_string():
+    filename = str(input("Enter a file name"))
+    print("The extension of your file is ." + filename.split('.', len(filename))[1])
+    # work
+
+
+# Exercise 24
+def palindrome_string():
+    s = str(input("Enter a word"))
+    if s == s[::-1]:
+        print("Your word is a palindrome !")
+    else:
+        print("Your word is not a palindrome")
+
+
+# Exercise 25
+def reverse_string():
+    s = str(input("Enter a word"))
+    print(s[::-1])
+
+
+# Exercise 26
+def get_words_beginning_by(first_char):
+    s = str(input("Enter a sentence"))
+    words = s.split(' ')
+    output = ""
+    for word in words:
+        if word[0] == str(first_char):
+            output += word + " "
+    print("Here words beginning by " + first_char + " --> " + output)
+
+
+# Exercise 27
+def longest_word():
+    s = str(input("Enter a sentence"))
+    words = s.split(' ')
+    print("The longest word in your sentence is " + max(words, key=len))
+
+
+# Exercise 28
+def is_empty():
+    # case list
+    array = ["1", "2"]
+    if len(array) < 1:
+        print("Your array is empty")
+    else:
+        print("Your array is not empty and his length is " + str(len(array)))
+
+    # case string
+    s = str(input("Enter a string"))
+    if len(s) < 1:
+        print("Your string is empty")
+    else:
+        print("Your string is not empty and her length is " + str(len(s)))
+
+
+# Exercise 29
+def remove_list_duplicates():
+    array = [1, 1, 2, 6, 8, 9, 3, 3, 4, 5, 2]
+    print(list(set(array)))
+
+
+# Exercise 30
+def compare_lists():
+    a = [1, 5, 3, 9]
+    b = [3, 6, 8, 7]
+    print(set(a) & set(b))
+
+
+# Exercise 31
+def peer_and_odd_in_list():
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    peers = []
+    odds = []
+    for i in array:
+        if i % 2 == 0:
+            peers.append(i)
+        else:
+            odds.append(i)
+    print("peers --> " + str(peers))
+    print("odds --> " + str(odds))
+
+
+# Exercise 32
+def shuffle_list():
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    random.shuffle(array)
+    print(array)
+
+
+# Exercise 33
+def peers_index_in_string():
+    s = str(input("Enter a sentence"))
+    peers = []
+    for i in range(len(s)):
+        if i % 2 == 0:
+            peers.append(s[i])
+    print(peers)
+
+
+# Exercise 34
+def get_great_notes():
+    notes = [12, 4, 14, 11, 18, 13, 7, 10, 5, 9, 15, 8, 14, 16]
+    great_notes = []
+    for note in notes:
+        if note >= 10:
+            great_notes.append(note)
+    print(great_notes)
+
+
+# Exercise 35
+def occurrence_words():
+    s = str(input("Enter a sentence"))
+    words = s.split(' ')
+    occurrences = {}
+    for x in words:
+        if x.lower() not in occurrences.keys():
+            occurrences[x.lower()] = 1
+        else:
+            occurrences[x.lower()] = occurrences[x.lower()] + 1
+    print(occurrences)
+
+
+# Exercise 36
+def remove_duplicate_spaces():
+    s = "Hi, my name  is  Meridolian"
+    s = ' '.join(s.split())
+    print(s)
+
+
+# Exercise 37
+def match_words():
+    s1 = "hi, my name is Meridolian"
+    s2 = "Hello I'm Meridolian"
+    words1 = s1.split(' ')
+    words2 = s2.split(' ')
+    output = set(words1) & set(words2)
+    print(output)
+
+
+# Exercise 38
+def split_first_last_words():
+    s = "Python est un langage de programmation"
+    words = s.split(' ')
+    output = ""
+    for i in range(len(words)):
+        if i == 0:
+            output += words[len(words) - 1] + " "
+        elif i == len(words) - 1:
+            output += words[0]
+        else:
+            output += words[i] + " "
+    print(output)
+
+
+# Exercise 39
+def count_words():
+    s = str(input("Enter a sentence"))
+    words = re.sub('['+string.punctuation+']', '', s).split()
+    print(len(words))
+
+
 if __name__ == '__main__':
-    char_iteration()
+    count_words()
 
