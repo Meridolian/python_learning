@@ -1,3 +1,5 @@
+import math
+
 
 def print_hi(name, age):
     username = input("what's your name ?")
@@ -28,6 +30,44 @@ def major_or_minor():
         print("You are minor")
 
 
+def first_hundred():
+    for i in range(100):
+        print(i)
+
+
+def sum_until_number():
+    n = int(input("Enter a number"))
+    sum = 0
+    for i in range(n):
+        sum += i
+    print(sum)
+
+
+def sum_str():
+    str = ""
+    n = int(input("Enter a number"))
+    for i in range(n):
+        str += '!'
+    print(str)
+
+
+def circle():
+    ray = int(input("Enter a number"))
+    area = math.pi * (ray * ray)
+    print("area : " + str(area))
+    perimeter = ray * ray
+    print("perimeter : " + str(perimeter))
+
+
+def divisors():
+    divisors = []
+    number = int(input("Enter a number"))
+    for i in range(1, number + 1):
+        if number % i == 0:
+            divisors.append(i)
+    print(divisors)
+
+
 if __name__ == '__main__':
-    maximum()
+    divisors()
 
