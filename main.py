@@ -359,6 +359,61 @@ def count_words():
     print(len(words))
 
 
+# Exercise 41
+def nombreDivisibles(number_list, n):
+    output = []
+    for i in number_list:
+        if i % n == 0:
+            output.append(i)
+    return output
+
+# Exercise 42
+def nombreOccurences(l, x):
+    output = 0
+    for i in l:
+        if i == x:
+            output += 1
+    return output
+
+
+# Exercise 43
+def InsertEtoile(s):
+    chars = list(s)
+    output = ""
+    for i in range(len(chars)):
+        if i == 0:
+            output += chars[i]
+        else:
+            output += "*" + chars[i]
+    return output
+
+
+# Exercise 44
+def toutEnMajuscule(l):
+    output = []
+    for i in range(len(l)):
+        output.append(l[i].upper())
+    return output
+
+# Exercise 45
+def char_lower_or_upper(s):
+    lowers = 0
+    uppers = 0
+    for char in s:
+        if char.islower():
+            lowers += 1
+        elif char.isupper():
+            uppers += 1
+    return lowers, uppers
+
+
+# Exercise 46
+def ten_base_number(n):
+    numbers = []
+    numbers = map(int, str(numbers))
+    print(str(numbers))
+
+
 if __name__ == '__main__':
-    count_words()
+    ten_base_number(152358)
 
