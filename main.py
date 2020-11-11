@@ -360,7 +360,7 @@ def count_words():
 
 
 # Exercise 41
-def nombreDivisibles(number_list, n):
+def divided_numbers(number_list, n):
     output = []
     for i in number_list:
         if i % n == 0:
@@ -368,7 +368,7 @@ def nombreDivisibles(number_list, n):
     return output
 
 # Exercise 42
-def nombreOccurences(l, x):
+def number_occurences(l, x):
     output = 0
     for i in l:
         if i == x:
@@ -377,7 +377,7 @@ def nombreOccurences(l, x):
 
 
 # Exercise 43
-def InsertEtoile(s):
+def insert_stars(s):
     chars = list(s)
     output = ""
     for i in range(len(chars)):
@@ -389,7 +389,7 @@ def InsertEtoile(s):
 
 
 # Exercise 44
-def toutEnMajuscule(l):
+def all_upper(l):
     output = []
     for i in range(len(l)):
         output.append(l[i].upper())
@@ -409,11 +409,23 @@ def char_lower_or_upper(s):
 
 # Exercise 46
 def ten_base_number(n):
-    numbers = []
-    numbers = map(int, str(numbers))
-    print(str(numbers))
+    result = set([])
+    while (n > 0):
+        result |= {n % 10}
+        n = n // 10
+    return result
+
+
+# Exercise 47
+def words_matches(text1, text2):
+    words1 = text1.split(' ')
+    words2 = text2.split(' ')
+    result = set(words1) & set(words2)
+    print(result)
 
 
 if __name__ == '__main__':
-    ten_base_number(152358)
+    text1 = "Python est un langage de programmation"
+    text2 = "Python est orienté objet"
+    words_matches(text1, text2)
 
