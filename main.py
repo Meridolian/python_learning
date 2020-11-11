@@ -409,10 +409,10 @@ def char_lower_or_upper(s):
 
 # Exercise 46
 def ten_base_number(n):
-    result = set([])
-    while (n > 0):
-        result |= {n % 10}
-        n = n // 10
+    result = []  # create an empty set
+    while (n > 0):  # while our number is positive
+        result |= {n % 10}  # we add the modulo 10 of the number IF he's not already in our set
+        n = n // 10  # now we can divide our number by 10 to "split it"
     return result
 
 
