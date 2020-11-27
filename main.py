@@ -425,7 +425,7 @@ def words_matches(text1, text2):
     result = set(words1) & set(words2)
     print(result)
 
-import letters_generator as lg
+import powerset
 
 if __name__ == '__main__':
-    lg.letter_generator(5)
+    print([x for x in powerset.powerset([1, 2, 3])])
