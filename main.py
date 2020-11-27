@@ -355,7 +355,7 @@ def split_first_last_words():
 # Exercise 39
 def count_words():
     s = str(input("Enter a sentence"))
-    words = re.sub('['+string.punctuation+']', '', s).split()
+    words = re.sub('[' + string.punctuation + ']', '', s).split()
     print(len(words))
 
 
@@ -366,6 +366,7 @@ def divided_numbers(number_list, n):
         if i % n == 0:
             output.append(i)
     return output
+
 
 # Exercise 42
 def number_occurences(l, x):
@@ -394,6 +395,7 @@ def all_upper(l):
     for i in range(len(l)):
         output.append(l[i].upper())
     return output
+
 
 # Exercise 45
 def char_lower_or_upper(s):
@@ -424,8 +426,6 @@ def words_matches(text1, text2):
     print(result)
 
 
-if __name__ == '__main__':
-    text1 = "Python est un langage de programmation"
-    text2 = "Python est orienté objet"
-    words_matches(text1, text2)
 
+if __name__ == '__main__':
+    #ln.luckyNumber(2645)
