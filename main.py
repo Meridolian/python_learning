@@ -425,7 +425,7 @@ def words_matches(text1, text2):
     result = set(words1) & set(words2)
     print(result)
 
-
+import letters_generator as lg
 
 if __name__ == '__main__':
-    #ln.luckyNumber(2645)
+    lg.letter_generator(5)
